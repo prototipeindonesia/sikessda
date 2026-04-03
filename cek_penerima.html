@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Penerima - Sikessda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .result-hidden { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen pb-10">
+
+    <div class="bg-blue-700 p-6 flex items-center sticky top-0 z-50 shadow-md">
+        <a href="dashboard.html" class="text-white mr-4">
+            <i class="fa-solid fa-arrow-left text-xl"></i>
+        </a>
+        <div>
+            <h1 class="text-white font-bold text-lg leading-none">Cek Penerima</h1>
+            <p class="text-blue-200 text-[10px] uppercase font-medium mt-1 tracking-wider">Pencarian Data Bansos</p>
+        </div>
+    </div>
+
+    <div class="p-6">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 mb-6">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-id-card-clip text-lg"></i>
+                </div>
+                <div>
+                    <h2 class="text-slate-800 font-bold text-sm leading-tight">Cari Status Berdasarkan NIK</h2>
+                    <p class="text-[11px] text-slate-500">Masukkan 16 digit Nomor Induk Kependudukan</p>
+                </div>
+            </div>
+
+            <form id="searchForm" class="space-y-4">
+                <div class="relative">
+                    <input type="number" id="nikInput" placeholder="Contoh: 737301XXXXXXXXXX" 
+                        class="block w-full px-4 py-4 border-2 border-slate-100 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all text-lg font-bold tracking-widest text-slate-700" required>
+                </div>
+                <button type="submit" 
+                    class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-100 flex items-center justify-center space-x-2 transition-all active:scale-95">
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                    <span>Cek Status Sekarang</span>
+                </button>
+            </form>
+        </div>
+
+        <div id="loadingState" class="result-hidden text-center py-10">
+            <div class="inline-block w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+            <p class="mt-4 text-slate-500 font-medium text-sm">Mencari di database...</p>
+        </div>
+
+        <div id="resultBox" class="result-hidden space-y-4 animate-in fade-in duration-500">
+            <h3 class="text-slate-800 font-extrabold text-xs uppercase tracking-widest mb-2 px-1">Hasil Pencarian</h3>
+            
+            <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm">
+                <div class="bg-emerald-50 px-4 py-3 border-b border-emerald-100 flex justify-between items-center">
+                    <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-widest">Data Ditemukan</span>
+                    <span class="px-2 py-1 bg-emerald-500 text-white text-[9px] font-black rounded-md">AKTIF</span>
+                </div>
+                
+                <div class="p-5 space-y-4">
+                    <div class="flex justify-between border-b border-slate-50 pb-2">
+                        <span class="text-xs text-slate-400 font-medium">Nama Penerima</span>
+                        <span class="text-xs text-slate-800 font-bold" id="resNama">MUHAMMAD RIFAI</span>
+                    </div>
+                    <div class="flex justify-between border-b border-slate-50 pb-2">
+                        <span class="text-xs text-slate-400 font-medium">Jenis Bantuan</span>
+                        <span class="text-xs text-blue-700 font-bold">BPNT & PKH</span>
+                    </div>
+                    <div class="flex justify-between border-b border-slate-50 pb-2">
+                        <span class="text-xs text-slate-400 font-medium">Wilayah</span>
+                        <span class="text-xs text-slate-800 font-medium text-right uppercase">Wara Barat, Kota Palopo</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-xs text-slate-400 font-medium">Periode</span>
+                        <span class="text-xs text-slate-800 font-medium">Tahap I 2026</span>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-slate-50 border-t border-slate-100">
+                    <div class="flex items-start space-x-2">
+                        <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                        <p class="text-[11px] text-slate-600 leading-relaxed italic">
+                            Silakan hubungi agen bank terdekat atau pendamping desa untuk pencairan dana bantuan Anda.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const resultBox = document.getElementById('resultBox');
+            const loadingState = document.getElementById('loadingState');
+            const nik = document.getElementById('nikInput').value;
+
+            // Tampilkan loading, sembunyikan hasil sebelumnya
+            resultBox.classList.add('result-hidden');
+            loadingState.classList.remove('result-hidden');
+
+            // Simulasi proses cari di database
+            setTimeout(() => {
+                loadingState.classList.add('result-hidden');
+                
+                if(nik.length === 16) {
+                    resultBox.classList.remove('result-hidden');
+                } else {
+                    alert("NIK harus 16 digit!");
+                }
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

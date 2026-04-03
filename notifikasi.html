@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifikasi - Sikessda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen pb-24">
+
+    <div class="bg-blue-700 p-6 flex items-center justify-between sticky top-0 z-50 shadow-md">
+        <div class="flex items-center">
+            <a href="dashboard.html" class="text-white mr-4">
+                <i class="fa-solid fa-arrow-left text-xl"></i>
+            </a>
+            <h1 class="text-white font-bold text-lg leading-none">Notifikasi</h1>
+        </div>
+        <button class="text-blue-100 text-xs font-semibold hover:text-white transition-colors">
+            Tandai Dibaca
+        </button>
+    </div>
+
+    <div class="flex bg-white border-b border-slate-100 mb-4">
+        <button class="flex-1 py-3 text-xs font-bold text-blue-700 border-b-2 border-blue-700">Semua</button>
+        <button class="flex-1 py-3 text-xs font-bold text-slate-400 hover:text-slate-600">Penting</button>
+        <button class="flex-1 py-3 text-xs font-bold text-slate-400 hover:text-slate-600">Info</button>
+    </div>
+
+    <div class="px-6 space-y-4">
+        
+        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-start space-x-4 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-emerald-500"></div>
+            <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="flex-1">
+                <div class="flex justify-between items-start">
+                    <h4 class="font-bold text-slate-800 text-sm">Usulan Disetujui</h4>
+                    <span class="text-[9px] font-bold text-slate-400 uppercase">Baru saja</span>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                    Selamat! Usulan bantuan <span class="font-bold">BPNT</span> Anda telah diverifikasi dan disetujui oleh Dinas Sosial.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-start space-x-4">
+            <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-arrows-rotate fa-spin text-xs"></i>
+            </div>
+            <div class="flex-1">
+                <div class="flex justify-between items-start">
+                    <h4 class="font-bold text-slate-800 text-sm">Tahap Verifikasi</h4>
+                    <span class="text-[9px] font-bold text-slate-400 uppercase">2 Jam Lalu</span>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                    Data usulan Anda sedang dalam tahap pengecekan berkas oleh <span class="font-bold">Admin Desa</span>. Mohon tunggu.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-start space-x-4 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-orange-500"></div>
+            <div class="w-10 h-10 bg-orange-50 text-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div class="flex-1">
+                <div class="flex justify-between items-start">
+                    <h4 class="font-bold text-slate-800 text-sm">Lengkapi Dokumen</h4>
+                    <span class="text-[9px] font-bold text-slate-400 uppercase">Kemarin</span>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                    Foto rumah yang Anda unggah kurang jelas. Silakan <span class="text-blue-700 underline font-bold">unggah kembali</span> untuk melanjutkan proses.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-slate-100 p-4 rounded-2xl flex items-start space-x-4 grayscale opacity-70">
+            <div class="w-10 h-10 bg-white text-slate-400 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <div class="flex-1">
+                <div class="flex justify-between items-start">
+                    <h4 class="font-bold text-slate-500 text-sm">Maintenance Sistem</h4>
+                    <span class="text-[9px] font-bold text-slate-400 uppercase">3 Hari Lalu</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1 leading-relaxed">
+                    Aplikasi akan melakukan pembaruan rutin pada pukul 00:00 WITA.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="p-6 text-center">
+        <p class="text-[10px] text-slate-400 font-medium uppercase tracking-widest">Menampilkan 4 notifikasi terakhir</p>
+    </div>
+
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-100 px-8 py-3 flex justify-between items-center z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.02)]">
+        <a href="dashboard.html" class="flex flex-col items-center text-slate-400 hover:text-blue-600">
+            <i class="fa-solid fa-house-chimney text-lg"></i>
+            <span class="text-[10px] font-medium mt-1">Beranda</span>
+        </a>
+        <a href="notifikasi.html" class="flex flex-col items-center text-blue-700">
+            <i class="fa-solid fa-bell text-lg"></i>
+            <span class="text-[10px] font-bold mt-1">Notifikasi</span>
+        </a>
+        <a href="profil.html" class="flex flex-col items-center text-slate-400 hover:text-blue-600">
+            <i class="fa-solid fa-user-gear text-lg"></i>
+            <span class="text-[10px] font-medium mt-1">Profil</span>
+        </a>
+        <a href="login.html" class="flex flex-col items-center text-red-400 hover:text-red-600">
+            <i class="fa-solid fa-power-off text-lg"></i>
+            <span class="text-[10px] font-medium mt-1">Keluar</span>
+        </a>
+    </nav>
+
+</body>
+</html>

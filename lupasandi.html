@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lupa Sandi - Sikessda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .step-hidden { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
+        
+        <div class="bg-blue-700 p-6 text-white text-center">
+            <h1 class="text-xl font-bold tracking-tight">Pemulihan Akun</h1>
+            <p class="text-blue-100 text-xs mt-1 uppercase tracking-widest font-medium">Sikessda Kota Palopo</p>
+        </div>
+
+        <div class="p-8">
+            
+            <div id="step1">
+                <div class="mb-6 text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-comment-sms text-2xl"></i>
+                    </div>
+                    <h2 class="text-lg font-bold text-slate-800">Verifikasi Nomor HP</h2>
+                    <p class="text-sm text-slate-500">Masukkan nomor yang terdaftar saat registrasi untuk menerima kode OTP.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Nomor Handphone</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+                                <i class="fa-solid fa-phone text-sm"></i>
+                            </span>
+                            <input type="tel" id="no_hp" placeholder="081234567xxx" 
+                                class="block w-full pl-10 pr-3 py-3.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition-all">
+                        </div>
+                    </div>
+                    <button onclick="nextStep(2)" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all">
+                        Kirim Kode OTP
+                    </button>
+                </div>
+            </div>
+
+            <div id="step2" class="step-hidden">
+                <div class="mb-6 text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-key text-2xl"></i>
+                    </div>
+                    <h2 class="text-lg font-bold text-slate-800">Masukkan OTP</h2>
+                    <p class="text-sm text-slate-500">Kode telah dikirim melalui WhatsApp ke nomor Anda.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex justify-between gap-2">
+                        <input type="text" maxlength="1" class="w-12 h-14 text-center text-xl font-bold border-2 border-slate-200 rounded-xl focus:border-blue-600 outline-none">
+                        <input type="text" maxlength="1" class="w-12 h-14 text-center text-xl font-bold border-2 border-slate-200 rounded-xl focus:border-blue-600 outline-none">
+                        <input type="text" maxlength="1" class="w-12 h-14 text-center text-xl font-bold border-2 border-slate-200 rounded-xl focus:border-blue-600 outline-none">
+                        <input type="text" maxlength="1" class="w-12 h-14 text-center text-xl font-bold border-2 border-slate-200 rounded-xl focus:border-blue-600 outline-none">
+                    </div>
+                    <button onclick="nextStep(3)" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all">
+                        Verifikasi Kode
+                    </button>
+                    <p class="text-center text-xs text-slate-400">Tidak menerima kode? <span class="text-blue-700 font-bold cursor-pointer">Kirim Ulang</span></p>
+                </div>
+            </div>
+
+            <div id="step3" class="step-hidden">
+                <div class="mb-6 text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-lock-open text-2xl"></i>
+                    </div>
+                    <h2 class="text-lg font-bold text-slate-800">Sandi Baru</h2>
+                    <p class="text-sm text-slate-500">Gunakan kombinasi sandi yang kuat dan mudah diingat.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Kata Sandi Baru</label>
+                        <input type="password" placeholder="••••••••" class="block w-full px-4 py-3.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Konfirmasi Sandi</label>
+                        <input type="password" placeholder="••••••••" class="block w-full px-4 py-3.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none">
+                    </div>
+                    <button onclick="finishReset()" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all">
+                        Perbarui Kata Sandi
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center border-t border-slate-50 pt-6">
+                <a href="login.html" class="text-sm font-bold text-slate-400 hover:text-blue-700 transition-colors">
+                    <i class="fa-solid fa-arrow-left mr-1"></i> Kembali ke Login
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function nextStep(step) {
+            // Sembunyikan semua step
+            document.getElementById('step1').classList.add('step-hidden');
+            document.getElementById('step2').classList.add('step-hidden');
+            document.getElementById('step3').classList.add('step-hidden');
+
+            // Tampilkan step yang dituju
+            document.getElementById('step' + step).classList.remove('step-hidden');
+        }
+
+        function finishReset() {
+            alert("Kata sandi berhasil diperbarui!");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

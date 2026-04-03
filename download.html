@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unduh Template - Sikessda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen pb-10">
+
+    <div class="bg-blue-700 p-6 flex items-center sticky top-0 z-50 shadow-md">
+        <a href="dashboard.html" class="text-white mr-4">
+            <i class="fa-solid fa-arrow-left text-xl"></i>
+        </a>
+        <div>
+            <h1 class="text-white font-bold text-lg leading-none">Pusat Unduhan</h1>
+            <p class="text-blue-200 text-[10px] uppercase font-medium mt-1 tracking-wider">Template Surat & Dokumen</p>
+        </div>
+    </div>
+
+    <div class="p-6">
+        <div class="relative mb-6">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+                <i class="fa-solid fa-magnifying-glass text-sm"></i>
+            </span>
+            <input type="text" placeholder="Cari nama surat..." 
+                class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 outline-none shadow-sm">
+        </div>
+
+        <h3 class="text-slate-800 font-extrabold text-xs uppercase tracking-widest mb-4 px-1">Daftar Dokumen Tersedia</h3>
+
+        <div class="space-y-3">
+            
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between group active:bg-blue-50 transition-all">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-file-pdf text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm">SKTM (Surat Keterangan Tidak Mampu)</h4>
+                        <p class="text-[10px] text-slate-400 font-medium">PDF &bull; 245 KB</p>
+                    </div>
+                </div>
+                <button onclick="simulateDownload('SKTM')" class="w-10 h-10 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center hover:bg-blue-700 hover:text-white transition-all">
+                    <i class="fa-solid fa-download text-sm"></i>
+                </button>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between group active:bg-blue-50 transition-all">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-file-word text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm">Form Pengusulan Mandiri</h4>
+                        <p class="text-[10px] text-slate-400 font-medium">DOCX &bull; 1.2 MB</p>
+                    </div>
+                </div>
+                <button onclick="simulateDownload('Form Pengusulan')" class="w-10 h-10 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center hover:bg-blue-700 hover:text-white transition-all">
+                    <i class="fa-solid fa-download text-sm"></i>
+                </button>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between group active:bg-blue-50 transition-all">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-file-shield text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm">Surat Pernyataan Tanggung Jawab</h4>
+                        <p class="text-[10px] text-slate-400 font-medium">PDF &bull; 180 KB</p>
+                    </div>
+                </div>
+                <button onclick="simulateDownload('Surat Pernyataan')" class="w-10 h-10 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center hover:bg-blue-700 hover:text-white transition-all">
+                    <i class="fa-solid fa-download text-sm"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="mt-10 bg-orange-50 border border-orange-100 p-4 rounded-xl flex items-start space-x-3">
+            <i class="fa-solid fa-circle-exclamation text-orange-500 mt-1"></i>
+            <div>
+                <p class="text-xs text-orange-800 font-bold mb-1">Catatan Penting:</p>
+                <p class="text-[11px] text-orange-700 leading-relaxed italic">
+                    Beberapa dokumen memerlukan tanda tangan Lurah/Camat setempat sebelum diunggah kembali ke sistem.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function simulateDownload(fileName) {
+            const btn = event.currentTarget;
+            const originalIcon = btn.innerHTML;
+            
+            // UI Feedback
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-sm"></i>';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert("File '" + fileName + "' berhasil diunduh ke folder Download.");
+                btn.innerHTML = '<i class="fa-solid fa-check text-sm"></i>';
+                btn.classList.add('bg-emerald-500', 'text-white');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalIcon;
+                    btn.classList.remove('bg-emerald-500', 'text-white');
+                    btn.disabled = false;
+                }, 2000);
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>
