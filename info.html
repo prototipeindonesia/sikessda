@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Sistem - Sikessda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen pb-24">
+
+    <div class="bg-blue-700 p-6 flex items-center justify-between sticky top-0 z-50">
+        <h1 class="text-white font-bold text-lg">Informasi Sistem</h1>
+    </div>
+
+    <div class="flex bg-white border-b border-slate-100 mb-4 sticky top-[72px] z-40">
+        <a href="notifikasi.html" class="flex-1 py-4 text-center text-[10px] font-black tracking-widest text-slate-400">SEMUA</a>
+        <a href="penting.html" class="flex-1 py-4 text-center text-[10px] font-black tracking-widest text-slate-400">PENTING</a>
+        <a href="info.html" class="flex-1 py-4 text-center text-[10px] font-black tracking-widest text-blue-700 border-b-2 border-blue-700">INFO</a>
+    </div>
+
+    <div class="px-6">
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+            <h4 class="font-bold text-slate-800 text-sm flex items-center"><i class="fa-solid fa-bullhorn text-blue-600 mr-2"></i> Update v1.0.4</h4>
+            <p class="text-[11px] text-slate-500 mt-2 leading-relaxed">Sistem sedang melakukan sinkronisasi data DTKS terbaru untuk wilayah Kota Palopo.</p>
+        </div>
+    </div>
+
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-100 px-8 py-3 flex justify-between items-center z-50">
+        <a href="dashboard.html" class="flex flex-col items-center text-slate-400 hover:text-blue-600">
+            <i class="fa-solid fa-house-chimney text-lg"></i>
+            <span class="text-[10px] font-medium mt-1">Beranda</span>
+        </a>
+        <a href="notifikasi.html" class="flex flex-col items-center text-blue-700">
+            <i class="fa-solid fa-bell text-lg"></i>
+            <span class="text-[10px] font-bold mt-1">Notifikasi</span>
+        </a>
+        <a href="profil.html" class="flex flex-col items-center text-slate-400 hover:text-blue-600">
+            <i class="fa-solid fa-user-gear text-lg"></i>
+            <span class="text-[10px] font-medium mt-1">Profil</span>
+        </a>
+        <button onclick="handleLogout()" class="flex flex-col items-center text-red-400 hover:text-red-600">
+            <i class="fa-solid fa-power-off text-lg"></i>
+            <span class="text-[10px] font-medium mt-1">Keluar</span>
+        </button>
+    </nav>
+
+    <script>
+        function handleLogout() {
+            if(confirm('Apakah Anda yakin ingin keluar?')) window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

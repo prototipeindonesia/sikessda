@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usulan Baru - Identitas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen pb-10">
+
+    <div class="bg-blue-700 p-6 flex items-center sticky top-0 z-50 shadow-md">
+        <a href="dashboard.html" class="text-white mr-4"><i class="fa-solid fa-arrow-left text-xl"></i></a>
+        <div>
+            <h1 class="text-white font-bold text-lg leading-none">Buat Usulan Baru</h1>
+            <p class="text-blue-200 text-[10px] uppercase font-medium mt-1 tracking-wider">Tahap 1 dari 3</p>
+        </div>
+    </div>
+
+    <div class="px-6 py-4 bg-white border-b border-slate-100 flex justify-between items-center mb-6">
+        <div class="flex items-center space-x-2">
+            <div class="w-7 h-7 bg-blue-700 text-white rounded-full flex items-center justify-center text-xs font-bold">1</div>
+            <span class="text-[10px] font-bold text-blue-700">IDENTITAS</span>
+        </div>
+        <div class="h-[2px] w-8 bg-slate-100"></div>
+        <div class="flex items-center space-x-2 opacity-40">
+            <div class="w-7 h-7 bg-slate-200 text-slate-500 rounded-full flex items-center justify-center text-xs font-bold">2</div>
+            <span class="text-[10px] font-bold text-slate-400">KRITERIA</span>
+        </div>
+        <div class="h-[2px] w-8 bg-slate-100"></div>
+        <div class="flex items-center space-x-2 opacity-40">
+            <div class="w-7 h-7 bg-slate-200 text-slate-500 rounded-full flex items-center justify-center text-xs font-bold">3</div>
+            <span class="text-[10px] font-bold text-slate-400">DOKUMEN</span>
+        </div>
+    </div>
+
+    <div class="px-6">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+            <h3 class="font-bold text-slate-800 border-b pb-2 mb-4">Data Individu</h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 mb-1 uppercase">Nomor Kartu Keluarga (KK)</label>
+                    <input type="number" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none" placeholder="737301XXXXXXXXXX">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 mb-1 uppercase">NIK Pengusul</label>
+                    <input type="number" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none" placeholder="Masukkan 16 digit NIK">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 mb-1 uppercase">Jenis Bansos</label>
+                    <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none text-sm">
+                        <option>Pilih Jenis Bantuan</option>
+                        <option>PKH (Program Keluarga Harapan)</option>
+                        <option>BPNT (Sembako)</option>
+                        <option>PBI-JK (Kesehatan)</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="window.location.href='usulan2.html'" class="w-full bg-blue-700 text-white font-bold py-4 rounded-xl mt-4 active:scale-95 transition-all">Selanjutnya</button>
+        </div>
+    </div>
+</body>
+</html>

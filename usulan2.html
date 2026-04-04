@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usulan Baru - Kriteria</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen pb-10">
+
+    <div class="bg-blue-700 p-6 flex items-center sticky top-0 z-50 shadow-md">
+        <a href="usulan1.html" class="text-white mr-4"><i class="fa-solid fa-arrow-left text-xl"></i></a>
+        <div>
+            <h1 class="text-white font-bold text-lg leading-none">Buat Usulan Baru</h1>
+            <p class="text-blue-200 text-[10px] uppercase font-medium mt-1 tracking-wider">Tahap 2 dari 3</p>
+        </div>
+    </div>
+
+    <div class="px-6 py-4 bg-white border-b border-slate-100 flex justify-between items-center mb-6">
+        <div class="flex items-center space-x-2">
+            <div class="w-7 h-7 bg-blue-700 text-white rounded-full flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-check"></i></div>
+            <span class="text-[10px] font-bold text-blue-700">IDENTITAS</span>
+        </div>
+        <div class="h-[2px] w-8 bg-blue-700"></div>
+        <div class="flex items-center space-x-2">
+            <div class="w-7 h-7 bg-blue-700 text-white rounded-full flex items-center justify-center text-xs font-bold">2</div>
+            <span class="text-[10px] font-bold text-blue-700">KRITERIA</span>
+        </div>
+        <div class="h-[2px] w-8 bg-slate-100"></div>
+        <div class="flex items-center space-x-2 opacity-40">
+            <div class="w-7 h-7 bg-slate-200 text-slate-500 rounded-full flex items-center justify-center text-xs font-bold">3</div>
+            <span class="text-[10px] font-bold text-slate-400">DOKUMEN</span>
+        </div>
+    </div>
+
+    <div class="px-6">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-6">
+            <h3 class="font-bold text-slate-800 border-b pb-2 mb-4">Survey Ekonomi</h3>
+            <div class="space-y-4">
+                <label class="block text-sm font-medium text-slate-700">Apakah dinding rumah kayu/bambu kualitas rendah?</label>
+                <div class="flex space-x-4">
+                    <label class="flex-1 text-center py-3 border border-slate-200 rounded-xl cursor-pointer has-[:checked]:bg-blue-100 has-[:checked]:border-blue-600">
+                        <input type="radio" name="d" class="hidden"> Ya
+                    </label>
+                    <label class="flex-1 text-center py-3 border border-slate-200 rounded-xl cursor-pointer has-[:checked]:bg-blue-100 has-[:checked]:border-blue-600">
+                        <input type="radio" name="d" class="hidden"> Tidak
+                    </label>
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-2">Pendapatan per Bulan</label>
+                <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none text-sm">
+                    <option>< Rp 600.000</option>
+                    <option>Rp 600.000 - Rp 1.500.000</option>
+                </select>
+            </div>
+            <div class="flex space-x-2 pt-4">
+                <button onclick="window.location.href='usulan1.html'" class="flex-1 border-2 border-slate-100 text-slate-400 font-bold py-4 rounded-xl">Kembali</button>
+                <button onclick="window.location.href='usulan3.html'" class="flex-[2] bg-blue-700 text-white font-bold py-4 rounded-xl active:scale-95 transition-all">Selanjutnya</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

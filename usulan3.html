@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usulan Baru - Dokumen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen pb-10">
+
+    <div class="bg-blue-700 p-6 flex items-center sticky top-0 z-50 shadow-md">
+        <a href="usulan2.html" class="text-white mr-4"><i class="fa-solid fa-arrow-left text-xl"></i></a>
+        <div>
+            <h1 class="text-white font-bold text-lg leading-none">Buat Usulan Baru</h1>
+            <p class="text-blue-200 text-[10px] uppercase font-medium mt-1 tracking-wider">Tahap 3 dari 3</p>
+        </div>
+    </div>
+
+    <div class="px-6 py-4 bg-white border-b border-slate-100 flex justify-between items-center mb-6">
+        <div class="flex items-center space-x-2">
+            <div class="w-7 h-7 bg-blue-700 text-white rounded-full flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-check"></i></div>
+            <span class="text-[10px] font-bold text-blue-700">IDENTITAS</span>
+        </div>
+        <div class="h-[2px] w-8 bg-blue-700"></div>
+        <div class="flex items-center space-x-2">
+            <div class="w-7 h-7 bg-blue-700 text-white rounded-full flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-check"></i></div>
+            <span class="text-[10px] font-bold text-blue-700">KRITERIA</span>
+        </div>
+        <div class="h-[2px] w-8 bg-blue-700"></div>
+        <div class="flex items-center space-x-2">
+            <div class="w-7 h-7 bg-blue-700 text-white rounded-full flex items-center justify-center text-xs font-bold">3</div>
+            <span class="text-[10px] font-bold text-blue-700">DOKUMEN</span>
+        </div>
+    </div>
+
+    <div class="px-6">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-6">
+            <h3 class="font-bold text-slate-800 border-b pb-2 mb-4">Unggah Foto Rumah</h3>
+            <div class="border-2 border-dashed border-slate-200 rounded-2xl p-8 text-center bg-slate-50">
+                <i class="fa-solid fa-camera text-2xl text-blue-600 mb-4"></i>
+                <h4 class="font-bold text-sm text-slate-700">Tampak Depan Rumah</h4>
+                <p class="text-[10px] text-slate-400 mt-1 uppercase">Maksimal 2MB</p>
+                <button type="button" class="mt-4 bg-white border border-blue-600 text-blue-600 text-xs font-bold px-4 py-2 rounded-lg">Pilih Foto</button>
+            </div>
+
+            <div class="bg-blue-50 p-4 rounded-xl flex items-start space-x-3">
+                <i class="fa-solid fa-circle-info text-blue-600 mt-1"></i>
+                <p class="text-[11px] text-blue-800 font-medium leading-relaxed">Data akan dikirim ke sistem untuk diverifikasi oleh Admin Desa & Dinsos.</p>
+            </div>
+
+            <div class="flex space-x-2">
+                <button onclick="window.location.href='usulan2.html'" class="flex-1 border-2 border-slate-100 text-slate-400 font-bold py-4 rounded-xl">Kembali</button>
+                <button onclick="handleFinish()" class="flex-[2] bg-emerald-600 text-white font-bold py-4 rounded-xl shadow-lg active:scale-95 transition-all">Kirim Usulan</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleFinish() {
+            alert("Terima kasih! Usulan Anda berhasil disimpan.");
+            window.location.href = "dashboard.html";
+        }
+    </script>
+</body>
+</html>
